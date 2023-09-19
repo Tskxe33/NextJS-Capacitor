@@ -5,7 +5,8 @@ import Navbar from "./components/navbar";
 import Header from "./components/Header";
 import { Camera, CameraResultType } from "@capacitor/camera";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ScreenBrightness } from "@capacitor-community/screen-brightness";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,19 @@ export default function Home() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    const setCurrentBrightness = async () => {
+      const { brightness: currentBrightness } =
+        await ScreenBrightness.getBrightness();
+
+      console.log(currentBrightness);
+
+      await ScreenBrightness.setBrightness({ brightness: -1 });
+    };
+
+    Capacitor.isNativePlatform() && setCurrentBrightness();
+  }, []);
 
   const takePicture = async () => {
     const image = await Camera.getPhoto({
@@ -46,7 +60,7 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center">
         {!Capacitor.isNativePlatform() && (
           <h1 className="text-slate-950">
-            We dont have access to the native camera on web.
+            We don&#39;t have access to the native camera on web.
           </h1>
         )}
         {Capacitor.isNativePlatform() && (
