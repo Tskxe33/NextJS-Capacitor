@@ -1,0 +1,34 @@
+PODS:
+  - Capacitor (5.4.0):
+    - CapacitorCordova
+  - CapacitorCamera (5.0.7):
+    - Capacitor
+  - CapacitorCordova (5.4.0)
+  - CapacitorShare (5.0.6):
+    - Capacitor
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorCamera (from `../../node_modules/@capacitor/camera`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorShare (from `../../node_modules/@capacitor/share`)"
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorCamera:
+    :path: "../../node_modules/@capacitor/camera"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorShare:
+    :path: "../../node_modules/@capacitor/share"
+
+SPEC CHECKSUMS:
+  Capacitor: a5cd803e02b471591c81165f400ace01f40b11d3
+  CapacitorCamera: 084b0b228bba7d00587910337b1c89e93b1d32ab
+  CapacitorCordova: 66ce22f9976de30fd816f746e9e92e07d6befafd
+  CapacitorShare: cd41743331cb71d217c029de54b681cbd91e0fcc
+
+PODFILE CHECKSUM: 95826fa3cf1b7e11a2030321ad1254a9ddda8b97
+
+COCOAPODS: 1.12.0
